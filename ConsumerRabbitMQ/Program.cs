@@ -13,13 +13,15 @@ var connection = connectionFactory.CreateConnection();
 
 var channel = connection.CreateModel();
 
-// accept only one unack-ed message at a time
-// uint prefetchSize, ushort prefetchCount, bool global
+// Set Prefetch Count value to limit the number of messages received at the same time.
 channel.BasicQos(0, 1, false);
 
 MessageReceiver messageReceiver = new MessageReceiver(channel);
 
-//channel.BasicConsume("demoqueue", false, messageReceiver);
+channel.BasicConsume("demoqueue", false, messageReceiver);
+
+
+//Set Auto Ack is true to prevent mistakes and save the waiting time.
 
 //channel.BasicConsume("topic.bombay.queue", false, messageReceiver);
 
@@ -32,7 +34,7 @@ MessageReceiver messageReceiver = new MessageReceiver(channel);
 //Console.WriteLine("Queue 3");
 //channel.BasicConsume("Queue3", false, messageReceiver);
 
-channel.BasicConsume("ReportPDF", false, messageReceiver);
+//channel.BasicConsume("ReportPDF", false, messageReceiver);
 
 Console.ReadLine();
 

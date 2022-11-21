@@ -11,55 +11,69 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestRabbitMQ", "RequestR
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Direct", "Direct", "{0227E38F-520B-4580-BF4B-85F73CDE4CE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectDemo", "DirectDemo\DirectDemo.csproj", "{D96AFF28-D84D-45AF-9D0C-3BE9B24EBA29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectPublisher", "DirectDemo\DirectPublisher.csproj", "{D96AFF28-D84D-45AF-9D0C-3BE9B24EBA29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fanout", "Fanout", "{F3816C6D-DFF0-48D4-BF2F-25FE3BF131BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanoutConsumer", "FanoutDemo\FanoutConsumer.csproj", "{9CA244D0-92AE-4B74-AFC8-945FEEE97843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutConsumer", "FanoutDemo\FanoutConsumer.csproj", "{9CA244D0-92AE-4B74-AFC8-945FEEE97843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanoutPublisher", "FanoutPublisher\FanoutPublisher.csproj", "{63EE9CBD-1D36-4871-AC94-323BD4757837}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutPublisher", "FanoutPublisher\FanoutPublisher.csproj", "{63EE9CBD-1D36-4871-AC94-323BD4757837}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Topic", "Topic", "{E8A4EA01-21F7-462B-A240-1D833A47FBB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopicDemo", "TopicDemo\TopicDemo.csproj", "{98A1F15F-3DE7-4F02-81DE-063CFA0D4223}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicPublisher", "TopicDemo\TopicPublisher.csproj", "{98A1F15F-3DE7-4F02-81DE-063CFA0D4223}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Header", "Header", "{B87C16DD-D923-445D-A6A2-314C7286C7DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadersDemo", "HeadersDemo\HeadersDemo.csproj", "{72EC15ED-83CA-4FA2-B795-1089265D83A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadersPublisher", "HeadersDemo\HeadersPublisher.csproj", "{72EC15ED-83CA-4FA2-B795-1089265D83A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExchangeToExchange", "ExchangeToExchange", "{D4742AD3-0C04-4D5A-8DB5-56249D9A31C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExToExDemo", "ExToExDemo\ExToExDemo.csproj", "{82BED073-E261-4895-A90B-CDF219C67C58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExToExDemo", "ExToExDemo\ExToExDemo.csproj", "{82BED073-E261-4895-A90B-CDF219C67C58}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Alternative", "Alternative", "{F2D8A75C-7999-47C4-A35B-5C81AA7FAFA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlternateDemo", "AlternateDemo\AlternateDemo.csproj", "{D9BF8114-3500-4727-8063-3B104FE97E91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlternatePubliser", "AlternateDemo\AlternatePubliser.csproj", "{D9BF8114-3500-4727-8063-3B104FE97E91}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PriorityQueues", "PriorityQueues", "{9F78ECCB-40A5-44AE-9199-98BF8B6C5FEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publisher", "PriorityQueues\Publisher.csproj", "{C66895A8-6C56-4844-9859-8E74C0150010}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Publisher", "PriorityQueues\Publisher.csproj", "{C66895A8-6C56-4844-9859-8E74C0150010}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker", "Worker\Worker.csproj", "{EAA32DAC-81A7-48BB-BA8E-16D7F99ADE10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker", "Worker\Worker.csproj", "{EAA32DAC-81A7-48BB-BA8E-16D7F99ADE10}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RequestReply", "RequestReply", "{3425A441-1DAD-468E-8A4B-0D4D2E41C425}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Replier", "Replier\Replier.csproj", "{CF8B0BDF-0F21-46C9-84D1-2FC3893FE293}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Replier", "Replier\Replier.csproj", "{CF8B0BDF-0F21-46C9-84D1-2FC3893FE293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Requestor", "Requestor\Requestor.csproj", "{7A2D84EB-2CAF-4829-8C09-6CA84D8181CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Requestor", "Requestor\Requestor.csproj", "{7A2D84EB-2CAF-4829-8C09-6CA84D8181CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{DFDDF408-3DE1-4274-B0CA-41C3836E562B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Default", "Default", "{95CDD798-3848-44E9-82E6-CA9709BB88ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultDemo", "DefaultDemo\DefaultDemo.csproj", "{4310E3B5-E812-4CB1-97CB-0FD4D46ACA48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultDemo", "DefaultDemo\DefaultDemo.csproj", "{4310E3B5-E812-4CB1-97CB-0FD4D46ACA48}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RequestReply_ResponseMatching", "RequestReply_ResponseMatching", "{FD30DABF-D387-4C5F-A4BC-7A7DF2341EEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestReply_Requestor", "RequestReply_Requestor\RequestReply_Requestor.csproj", "{874CF74C-1061-4DD8-8E0C-5050E8571D5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestReply_Requestor", "RequestReply_Requestor\RequestReply_Requestor.csproj", "{874CF74C-1061-4DD8-8E0C-5050E8571D5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Common", "Demo.Common\Demo.Common.csproj", "{E0658119-0628-40F4-84C9-F5605A80AD3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Common", "Demo.Common\Demo.Common.csproj", "{E0658119-0628-40F4-84C9-F5605A80AD3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestReply_Replier", "RequestReply_Replier\RequestReply_Replier.csproj", "{77C401A4-3277-44B9-9F73-58927B409856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestReply_Replier", "RequestReply_Replier\RequestReply_Replier.csproj", "{77C401A4-3277-44B9-9F73-58927B409856}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectConsumer", "DirectDemoConsumer\DirectConsumer.csproj", "{547874DA-8D54-420E-B4CD-7EBCD3F1927D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicCosumer", "TopicCosumer\TopicCosumer.csproj", "{0482A91A-88EE-4022-90B4-6155DDA4C56B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadersConsumer", "HeadersConsumer\HeadersConsumer.csproj", "{FB381406-528C-4F63-B4A6-DC71749AF77C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlternateConsumer", "AlternateConsumer\AlternateConsumer.csproj", "{48E8128B-1719-469F-9D66-74A5061157AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetterExchange", "DeadLetterExchange", "{B2194DC9-61D2-42A8-B609-21633A1B313F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadLetterExchangePublisher", "DeadLetterExchangePublisher\DeadLetterExchangePublisher.csproj", "{706B9358-1267-4848-96B3-5643C4C65B0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadLetterExchangeConsumer", "DeadLetterExchangeConsumer\DeadLetterExchangeConsumer.csproj", "{72E08497-0597-404B-BE4D-025F708B2776}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,6 +153,30 @@ Global
 		{77C401A4-3277-44B9-9F73-58927B409856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77C401A4-3277-44B9-9F73-58927B409856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77C401A4-3277-44B9-9F73-58927B409856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{547874DA-8D54-420E-B4CD-7EBCD3F1927D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{547874DA-8D54-420E-B4CD-7EBCD3F1927D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{547874DA-8D54-420E-B4CD-7EBCD3F1927D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{547874DA-8D54-420E-B4CD-7EBCD3F1927D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0482A91A-88EE-4022-90B4-6155DDA4C56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0482A91A-88EE-4022-90B4-6155DDA4C56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0482A91A-88EE-4022-90B4-6155DDA4C56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0482A91A-88EE-4022-90B4-6155DDA4C56B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB381406-528C-4F63-B4A6-DC71749AF77C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB381406-528C-4F63-B4A6-DC71749AF77C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB381406-528C-4F63-B4A6-DC71749AF77C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB381406-528C-4F63-B4A6-DC71749AF77C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E8128B-1719-469F-9D66-74A5061157AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E8128B-1719-469F-9D66-74A5061157AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E8128B-1719-469F-9D66-74A5061157AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E8128B-1719-469F-9D66-74A5061157AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{706B9358-1267-4848-96B3-5643C4C65B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{706B9358-1267-4848-96B3-5643C4C65B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{706B9358-1267-4848-96B3-5643C4C65B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{706B9358-1267-4848-96B3-5643C4C65B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72E08497-0597-404B-BE4D-025F708B2776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E08497-0597-404B-BE4D-025F708B2776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E08497-0597-404B-BE4D-025F708B2776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E08497-0597-404B-BE4D-025F708B2776}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,6 +200,12 @@ Global
 		{874CF74C-1061-4DD8-8E0C-5050E8571D5F} = {FD30DABF-D387-4C5F-A4BC-7A7DF2341EEA}
 		{E0658119-0628-40F4-84C9-F5605A80AD3E} = {FD30DABF-D387-4C5F-A4BC-7A7DF2341EEA}
 		{77C401A4-3277-44B9-9F73-58927B409856} = {FD30DABF-D387-4C5F-A4BC-7A7DF2341EEA}
+		{547874DA-8D54-420E-B4CD-7EBCD3F1927D} = {0227E38F-520B-4580-BF4B-85F73CDE4CE5}
+		{0482A91A-88EE-4022-90B4-6155DDA4C56B} = {E8A4EA01-21F7-462B-A240-1D833A47FBB2}
+		{FB381406-528C-4F63-B4A6-DC71749AF77C} = {B87C16DD-D923-445D-A6A2-314C7286C7DC}
+		{48E8128B-1719-469F-9D66-74A5061157AA} = {F2D8A75C-7999-47C4-A35B-5C81AA7FAFA2}
+		{706B9358-1267-4848-96B3-5643C4C65B0F} = {B2194DC9-61D2-42A8-B609-21633A1B313F}
+		{72E08497-0597-404B-BE4D-025F708B2776} = {B2194DC9-61D2-42A8-B609-21633A1B313F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B4D4C74-E914-4D9D-B12F-F8065DBAE30B}

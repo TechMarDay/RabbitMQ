@@ -1,13 +1,13 @@
 ﻿using PublishRabbitMQ;
 
 #region direct message
-/*
+
 Directmessages directmessages = new Directmessages();
 for (int i = 0; i < 20; i++)
 {
     directmessages.SendMessage($"Direct message {i}");
 }
-*/
+
 #endregion
 
 #region topic exchange
@@ -31,7 +31,7 @@ Headersmessages headersmessages = new Headersmessages();
 headersmessages.SendMessage();
 */
 #endregion
-MessageTTL ttlMessages = new MessageTTL();
-ttlMessages.SendMessage("Message with ttl 10000");
+//MessageTTL ttlMessages = new MessageTTL();
+//ttlMessages.SendMessage("Message with ttl 10000");
 
 Console.ReadLine();

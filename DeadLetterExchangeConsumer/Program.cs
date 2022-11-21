@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-
 
 ConnectionFactory factory = new ConnectionFactory();
 factory.HostName = "localhost";
@@ -17,13 +12,16 @@ factory.Password = "123";
 var conn = factory.CreateConnection();
 var channel = conn.CreateModel();
 
+
 var consumer = new EventingBasicConsumer(channel);
 consumer.Received += Consumer_Received;
 
-var consumerTag = channel.BasicConsume("my.queue1", false, consumer);
+
+var consumerTag = channel.BasicConsume("demo.queue.fail", false, consumer);
 
 Console.WriteLine("Waiting for messages. Press any key to exit.");
 Console.ReadKey();
+
 
 void Consumer_Received(object sender, BasicDeliverEventArgs e)
 {

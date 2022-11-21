@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
@@ -20,7 +16,7 @@ var channel = conn.CreateModel();
 var consumer = new EventingBasicConsumer(channel);
 consumer.Received += Consumer_Received;
 
-var consumerTag = channel.BasicConsume("my.queue1", false, consumer);
+var consumerTag = channel.BasicConsume("my.unrouted", false, consumer);
 
 Console.WriteLine("Waiting for messages. Press any key to exit.");
 Console.ReadKey();
@@ -28,7 +24,7 @@ Console.ReadKey();
 void Consumer_Received(object sender, BasicDeliverEventArgs e)
 {
     string message = Encoding.UTF8.GetString(e.Body.ToArray());
-    Console.WriteLine("Message:" + message);
+    Console.WriteLine("Message:" + message + " from exchange " + e.Exchange);
 
     channel.BasicNack(e.DeliveryTag, false, false);
 }

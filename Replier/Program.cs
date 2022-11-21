@@ -6,40 +6,33 @@ using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace Replier
+ConnectionFactory factory = new ConnectionFactory();
+factory.HostName = "localhost";
+factory.VirtualHost = "/";
+factory.Port = 5673;
+factory.UserName = "admin";
+factory.Password = "123";
+
+IConnection conn = factory.CreateConnection();
+IModel channel = conn.CreateModel();
+
+//publish response message to responses queue
+var consumer = new EventingBasicConsumer(channel);
+consumer.Received += (sender, e) =>
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            ConnectionFactory factory = new ConnectionFactory();
-            factory.HostName = "localhost";
-            factory.VirtualHost = "/";
-            factory.Port = 5673;
-            factory.UserName = "admin";
-            factory.Password = "123";
+    string request = System.Text.Encoding.UTF8.GetString(e.Body.ToArray());
+    Console.WriteLine("Request received:" + request);
 
-            IConnection conn = factory.CreateConnection();
-            IModel channel = conn.CreateModel();
+    string response = "Response for " + request;
 
-            var consumer = new EventingBasicConsumer(channel);
-            consumer.Received += (sender, e) =>
-            {
-                string request = System.Text.Encoding.UTF8.GetString(e.Body.ToArray());
-                Console.WriteLine("Request received:" + request);
+    channel.BasicPublish("", "responses", null, Encoding.UTF8.GetBytes(response));
+};
 
-                string response = "Response for " + request;
+//Cosume message from requests queue
+channel.BasicConsume("requests", true, consumer);
 
-                channel.BasicPublish("", "responses", null, Encoding.UTF8.GetBytes(response));
-            };
+Console.WriteLine("Press a key to exit.");
+Console.ReadKey();
 
-            channel.BasicConsume("requests", true, consumer);
-
-            Console.WriteLine("Press a key to exit.");
-            Console.ReadKey();
-
-            channel.Close();
-            conn.Close();
-        }
-    }
-}
+channel.Close();
+conn.Close();

@@ -30,7 +30,7 @@ namespace Worker
                 string message = System.Text.Encoding.UTF8.GetString(e.Body.ToArray());
 
                 Console.Write($"Processing message -> '{ message}' ...");
-                Thread.Sleep(1000);
+                Thread.Sleep(4000);
                 Console.WriteLine("FINISHED");
 
                 channel.BasicAck(e.DeliveryTag, false);

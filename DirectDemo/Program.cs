@@ -1,83 +1,87 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using RabbitMQ.Client;
 
-namespace DirectDemo
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            IConnection conn;
-            IModel channel;
 
-            ConnectionFactory factory = new ConnectionFactory();
-            factory.HostName = "localhost";
-            factory.VirtualHost = "/";
-            factory.Port = 5673;
-            factory.UserName = "admin";
-            factory.Password = "123";
+ConnectionFactory factory = new ConnectionFactory();
+factory.HostName = "localhost";
+factory.VirtualHost = "/";
+factory.Port = 5673;
+factory.UserName = "admin";
+factory.Password = "123";
 
-            conn = factory.CreateConnection();
-            channel = conn.CreateModel();
+var conn = factory.CreateConnection();
+var channel = conn.CreateModel();
 
-            channel.ConfirmSelect();
+//Declare exchange
+channel.ExchangeDeclare
+    (
+    "ex.directDemo",
+    ExchangeType.Direct,
+    true,
+    false,
+    null);
 
-            channel.ExchangeDeclare
-                (
-                "ex.direct",
-                ExchangeType.Direct,
-                true,
-                false,
-                null);
+//Declare queue
+channel.QueueDeclare(
+    "my.infos",
+    true,
+    false,
+    false,
+    null);
 
-            channel.QueueDeclare(
-                "my.infos",
-                true,
-                false,
-                false,
-                null);
+channel.QueueDeclare(
+    "my.warnings",
+    true,
+    false,
+    false,
+    null);
 
-            channel.QueueDeclare(
-                "my.warnings",
-                true,
-                false,
-                false,
-                null);
+channel.QueueDeclare(
+    "my.errors",
+    true,
+    false,
+    false,
+    null);
 
-            channel.QueueDeclare(
-                "my.errors",
-                true,
-                false,
-                false,
-                null);
+//Binding queue to exchange with routing key
+channel.QueueBind("my.infos", "ex.directDemo", "info");
+channel.QueueBind("my.warnings", "ex.directDemo", "warning");
+channel.QueueBind("my.errors", "ex.directDemo", "error");
 
-            channel.QueueBind("my.infos", "ex.direct", "info");
-            channel.QueueBind("my.warnings", "ex.direct", "warning");
-            channel.QueueBind("my.errors", "ex.direct", "error");
+//Publish message to exchange with routing key
+var infoMesssage = "Message with routing key info.";
+channel.BasicPublish(
+    "ex.directDemo",
+    "info",
+    null,
+    Encoding.UTF8.GetBytes(infoMesssage));
+Console.WriteLine($"Message Sent: {infoMesssage}");
 
-            channel.BasicPublish(
-                "ex.direct",
-                "info",
-                null,
-                Encoding.UTF8.GetBytes("Message with routing key info."));
+var warningMesssage = "Message with routing key warning.";
+channel.BasicPublish(
+    "ex.directDemo",
+    "warning",
+    null,
+    Encoding.UTF8.GetBytes(warningMesssage));
+Console.WriteLine($"Message Sent: {warningMesssage}");
 
-            channel.BasicPublish(
-                "ex.direct",
-                "warning",
-                null,
-                Encoding.UTF8.GetBytes("Message with routing key warning."));
+var errorMesssage = "Message with routing key error.";
+channel.BasicPublish(
+    "ex.directDemo",
+    "error",
+    null,
+    Encoding.UTF8.GetBytes(errorMesssage));
+Console.WriteLine($"Message Sent: {errorMesssage}");
 
-            channel.BasicPublish(
-                "ex.direct",
-                "error",
-                null,
-                Encoding.UTF8.GetBytes("Message with routing key error."));
+/*
+channel.QueueDelete("my.infos");
+channel.QueueDelete("my.warnings");
+channel.QueueDelete("my.errors");
+channel.ExchangeDelete("ex.directDemo");
+*/
 
-            channel.WaitForConfirms();
-        }
-    }
-}
+channel.Close();
+conn.Close();
+
+Console.ReadLine();
+
